@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Puppeteer Script</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <button id="run-script">Run Script</button>
+    
+    <script>
+        document.getElementById('run-script').addEventListener('click', () => {
+            fetch('/run-script')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Script result:', data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+    <script src="./home.js" type="module"></script>
+</body>
+
+</html>
